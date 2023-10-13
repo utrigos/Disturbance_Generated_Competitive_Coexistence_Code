@@ -1,0 +1,47 @@
+function Result = InvasionFunction(BirthRes, DeathRes, BirthInvade, DeathInvade, Gamma, InvType, AcVal)
+
+tmax = 400; 
+amax = 40;
+eps = 10^(-6);
+
+Na = 800;
+Nt = 12000;
+
+da = amax/Na;
+a = 0:da:amax;
+
+initcon = 2.*exp(-2*a);
+
+n = OneSpecies(Na,Nt,initcon,amax, tmax,BirthRes,DeathRes,Gamma); 
+
+InitConRes = n(:,end);
+
+if InvType == 1 %Ursula ADDED CODE
+    InitConInvade = eps.* ones(length(a),1); %constant eps case
+elseif InvType == 2 %Ursula ADDED CODE
+   InitConInvade = eps.*a.*exp(-a); %eps(a) case
+end %URSULA ADDED CODE
+                        
+[n,m,SI,SJ] = TwoSpecies(Na,Nt,amax,tmax,InitConRes,InitConInvade,BirthRes,DeathRes,BirthInvade,DeathInvade,Gamma);
+rho = Gamma.*exp(-Gamma.*a'); % rho at steady-state
+
+
+
+if sum(da*rho.*m(:,end)) > eps
+    Result = 1; 
+else 
+    Result = 0;
+end
+
+%% AC value
+if max(n(:,end)+m(:,end))>=1
+           AcVal= 0;
+else
+            AcVal=1;
+end
+%% AC value
+
+
+
+end
+

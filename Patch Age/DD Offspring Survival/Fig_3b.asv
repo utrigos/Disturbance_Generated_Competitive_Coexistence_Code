@@ -1,0 +1,169 @@
+tic
+
+%% Theoretical
+% meshsize = 0.0005;
+meshsize = .01;
+
+% for g = 0:.1:.6;
+g = 0; %.66
+% i =6;
+
+for i = 6:6
+    if i ==1
+        mj=2;
+        ai=1;
+        aj=1;
+        rj=15;
+    elseif i ==2
+        mj=1;
+        ai=1;
+        aj=1;
+        rj=5.6;
+    elseif i==3
+        mj=2;
+        ai=1;
+        aj=1;
+        rj=6.8;
+    elseif i==4
+        mj=2;
+        ai=1;
+        aj=1;
+        rj=9;
+    elseif i==5
+        mj = 18.5;
+        ai = 7.6;
+        aj=7.6;
+        rj=33.3;
+    elseif i==6
+        mj = 1;
+        ai = 0.2;
+        aj=0.2;
+        rj=5;
+    end
+
+
+%define range of alpha and mu values
+mend = mj+15;
+rend = rj+40;
+
+mi=mj:meshsize:mend;
+ri=rj:meshsize:rend;
+%-------Param 3 ----------------
+
+%Making a Matrix of alpha and reproduction values
+[r,m] = meshgrid(ri,mi);
+
+%% Invasion
+AcjCon = ((ai .*(g + mj - rj)) ./(ai .*mj - (ai - aj) .*(rj - g)))>(1);
+
+AcjConNot = ((ai .*(g + mj - rj)) ./(ai .*mj - (ai - aj) .*(rj - g)))<=(1);
+
+RijFinite = ((-1).*g+(-1).*m+aj.^(-1).*r.*rj.^(-1).*(ai.*g+ai.*mj+(-1).*ai.* ...
+  rj+aj.*rj+(-1).*ai.*(g+mj+(-1).*rj).*(ai.*(g+mj+(-1).*rj).*(ai.* ...
+  mj+(-1).*(ai+(-1).*aj).*((-1).*g+rj)).^(-1)).^((g+(-1).*rj).^(-1) ...
+  .*rj)))>(0);
+
+RijInfinite = ((-1).*g+(-1).*m+aj.^(-1).*r.*rj.^(-1).*(ai.*(g+mj)+((-1).*ai+aj) ...
+  .*rj))>(0);
+
+SpIInvFinite = AcjCon.*RijFinite;
+SpIInvFinite(SpIInvFinite==0) = NaN;
+
+SpIInvInfinite = AcjConNot.*RijInfinite;
+SpIInvInfinite(SpIInvInfinite==0)=NaN;
+
+
+Rji = ((-1).*g+(-1).*mj+ai.^(-1).*r.^(-1).*(aj.*(g+m)+(ai+(-1).*aj).*r) ...
+  .*rj)>(0);
+
+invFinite = SpIInvFinite.*Rji;
+invFinite(invFinite==0) = NaN;
+
+invInfinite = SpIInvInfinite.*Rji;
+invInfinite(invInfinite==0) = NaN;
+
+
+%-------start Rvals ----------------
+
+ineq3 = 1<2;
+
+invRiFinite = SpIInvFinite.*ineq3;
+invRiFinite(invRiFinite==0)=NaN;
+
+invRiInfinite = SpIInvInfinite.*ineq3;
+invRiInfinite(invRiInfinite==0)=NaN;
+
+invRj = Rji.*ineq3;
+invRj(invRj==0)=NaN;
+
+invFinite = Rji.*SpIInvFinite;
+invFinite(invFinite==0)=NaN;
+
+invInfinite = Rji.*SpIInvInfinite;
+invInfinite(invInfinite==0)=NaN;
+
+%%
+
+
+fig1=figure();
+
+
+h = gobjects(4, 1); %order of legends
+
+h(2)= surf(m,r,invRj,'DisplayName','Species $j$ invades','EdgeColor', 'none', 'FaceColor','[0.6350 0.0780 0.1840]','FaceAlpha',0.7);
+     hold on
+      surf(m,r,invRiInfinite,'HandleVisibility','off','EdgeColor', 'none', 'FaceColor','[0 0.4470 0.7410]','FaceAlpha',0.7)
+     hold on
+h(1)=    surf(m,r,invRiFinite,'DisplayName','Species $i$ invades','EdgeColor', 'none', 'FaceColor','[0 0.4470 0.7410]','FaceAlpha',0.7);
+     hold on
+      
+h(3)=      surf(m,r,invFinite,'DisplayName','Coexistence','EdgeColor', 'none', 'FaceColor','k','FaceAlpha',1);
+      hold on
+
+       surf(m,r,invInfinite,'HandleVisibility','off','EdgeColor', 'none', 'FaceColor','k','FaceAlpha',1)
+      hold on
+      
+
+      %%
+
+
+%-------end Rvals ----------------
+
+ylabel('Reproduction $r_i$','FontSize',20,'Interpreter', 'latex')
+xlabel('Mortality $m_i$','FontSize',20,'Interpreter', 'latex')
+
+view(0,90)
+%%
+
+hold on 
+
+ axis([mj-.3 mend rj-1 rend])
+
+hold on 
+
+%line for bi at bj
+y = [rj,rj];
+x = [mj, mend];
+z= [1,1];
+
+h(4)=plot3(x,y,z,'--','color','k','DisplayName','$r_i=r_j$, $m_i=m_j$','LineWidth',1.5);
+
+hold on 
+
+%line for mi = mj
+y1 = [rj, rend];
+x1 = [mj, mj];
+z1= [1,1];
+
+plot3(x1,y1,z1,'--','color','k','HandleVisibility','off','LineWidth',1.5);
+%%
+legend(h([1 2 3 4]),'FontSize',20,'Location','southeast','Interpreter', 'latex')
+
+hold on 
+
+
+
+hold off
+
+end
+toc
