@@ -11,7 +11,6 @@ meshsize = .01;
         rj=5;
 
 %define range of alpha and mu values
-% change to track on github testline
 mend = mj+15;
 rend = rj+40;
 
