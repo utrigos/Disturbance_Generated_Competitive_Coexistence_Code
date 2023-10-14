@@ -4,6 +4,12 @@
 
 Description of the overall project.
 
+### Dependencies
+
+* Describe any prerequisites, libraries, OS version, etc., needed before running the program.
+* ex. MATLAB parallel computing toolbox
+* Do we use anthing else?
+
 ### Example simulation
 
 Name of file ready to run and a description of the file. 
