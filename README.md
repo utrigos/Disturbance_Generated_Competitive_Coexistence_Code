@@ -4,29 +4,32 @@
 
 Description of the overall project.
 
-## Funtions
-
-List and short description of each function (we could use the ones from the help text).
-
 ### Example simulation
 
 Name of file ready to run and a description of the file. 
 
-## Help
+## Funtions
+
+List and short description of each function (we could use the ones from the help text).
+
+
+### Help
 
 For a detailed description of function arguements and outputs use MATLAB's help command:
 ```
 help Function_Name
 ```
 
-## Authors
-
-Contributors names and contact info
-
 ## Version History
 
 * 0.1
     * Initial Release
+
+## Authors
+
+Contributors names and contact info
+
+
 
 ## License
 
