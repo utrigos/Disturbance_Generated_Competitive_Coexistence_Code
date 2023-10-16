@@ -2,7 +2,7 @@
 
 ## General Description
 
-Description of the overall project.
+Description of the overall project goes here.
 
 ### Dependencies
 
