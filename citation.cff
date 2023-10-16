@@ -15,10 +15,12 @@ authors:
     family-names: Rainey
     affiliation: Karlstad University
     email: rainey.lyons@kau.se
+    orcid: 'https://orcid.org/0000-0003-4113-0357'
   - given-names: Delgadino
     name-particle: G.
     family-names: Matias
     email: matias.delgadino@gmail.com
+    orcid: 'https://orcid.org/0000-0002-6897-1060'
     affiliation: University of Texas at Austin
   - given-names: Ackleh
     name-particle: S.
@@ -29,6 +31,7 @@ authors:
     family-names: Ostling
     email: annette.ostling@austin.utexas.edu
     affiliation: University of Texas at Austin
+    orcid: 'https://orcid.org/0000-0002-9634-2587'
 repository-code: >-
   https://github.com/utrigos/Disturbance_Generated_Competitive_Coexistence_Code
 abstract: >-
