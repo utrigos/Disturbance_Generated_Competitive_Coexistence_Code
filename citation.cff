@@ -1,0 +1,45 @@
+cff-version: 1.0.0
+title: Disturbance Generated Competitive Coexistence Code
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Ursula
+    name-particle: A.
+    family-names: Trigos-Raczkowski
+    email: utrigos@austin.utexas.edu
+    affiliation: University of Texas at Austin
+    orcid: 'https://orcid.org/0000-0001-7287-6018'
+  - given-names: Lyons
+    family-names: Rainey
+    affiliation: Karlstad University
+    email: rainey.lyons@kau.se
+  - given-names: Delgadino
+    name-particle: G.
+    family-names: Matias
+    email: matias.delgadino@gmail.com
+    affiliation: University of Texas at Austin
+  - given-names: Ackleh
+    name-particle: S.
+    family-names: Azmy
+    email: azmy.ackleh@louisiana.edu
+    affiliation: University of Louisiana at Lafayette
+  - given-names: Annette
+    family-names: Ostling
+    email: annette.ostling@austin.utexas.edu
+    affiliation: University of Texas at Austin
+repository-code: >-
+  https://github.com/utrigos/Disturbance_Generated_Competitive_Coexistence_Code
+abstract: >-
+  Code used for simulating and modeling two species
+  competitive coexistence generated via disturbance. We opt
+  for a more accurate (and hence faster) 2nd order scheme,
+  specifically a finite volume scheme which makes use of a
+  flux limiter method in the event of any sharp changes in
+  the population density to avoid numerical diffusion.
+  Specifically, we use a minmod flux limiter scheme which,
+  heuristically, interpolates between high order and low
+  order approximations of the flux.
+version: 1.0.0
+date-released: '2023-10-16'
