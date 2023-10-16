@@ -29,7 +29,7 @@ help Function_Name
 ## Version History
 
 * 1.0.0
-    * Initial Release 
+    * Initial Release
 
 ## Authors
 
