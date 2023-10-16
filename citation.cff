@@ -1,4 +1,4 @@
-cff-version: 1.0.0
+cff-version: 1.2.0
 title: Disturbance Generated Competitive Coexistence Code 
 message: >-
   If you use this software, please cite it using the
@@ -44,5 +44,5 @@ abstract: >-
   Specifically, we use a minmod flux limiter scheme which,
   heuristically, interpolates between high order and low
   order approximations of the flux.
-version: 1.0.0
+version: 1.2.0
 date-released: '2023-10-16'
