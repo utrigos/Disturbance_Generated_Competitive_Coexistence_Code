@@ -21,6 +21,71 @@ All of the folder have the same basic setup: there are
 - HRAgeFlux which runs the flux code
 - RhoHRAge which simulates patch dynamics.
 
+SPECIFIC INSTRUCTIONS TO REPLICATE FIGURES BEGIN
+September 2024 Update
+
+Main Manuscript
+Fig 1: No code.
+Fig 2:  
+	2(a): Set g =0.1 mycount=1, ai=aj=1. mycount = 1. Run “fig2a_fig5_figS2_Sept2024Update.m” in folder
+		Patch Age > DD Reproduction > DDReproduction-with-Acritical 
+	2(b): Set F == 1. Run “Fig2_b_d_Fig3b_Sep2024Update.m” in folder
+		Patch Age > DD Offspring Survival AND Reproduction 
+	2(c): Set i = 5, g = 2.5. Run “Fig2c_FigS4_Sep2024Update.m” in folder
+		Patch Age > DD Reproduction 
+	2(d): Set F == 2. Run “Fig2_b_d_Fig3b_Sep2024Update.m” in folder
+		Patch Age > DD Offspring Survival AND Reproduction 
+
+Fig 3:
+	3(a): Set i=5:5 . Run “Fig3a_FigS5_FigS6_Sept2024Updated.m” in folder
+		Patch Age > DD Offspring Survival > Cluster Matrix Data
+	3(b): Set F == 3. Run “Fig2_b_d_Fig3b_Sep2024Update.m” in folder
+		Patch Age > DD Offspring Survival AND Reproduction 
+Fig 4:
+	4(a): Set mycount = 1; . Run “Fig4a_FigS8_Sep2024Updated.m” in folder
+		Patch Age > DD Mortality > DD Mort > Cluster Matrix Data r:m tradeoff
+	4(b): Set F == 1; . Run “Fig_4_b_d_Sep2024Update.m” in folder
+		Patch Age > DD Mortality > DD Mort > Cluster Matrix Data r:m tradeoff
+	4(c): Set i = 4:4 . Run “Fig_4c_Fig_S9_Sept2024Updated.m” in folder
+		Patch Age > DD Mortality > DD Mort w Alphas > Cluster Matrix Data r:alpha tradeoff
+	4(d): Set F==2; . Run “Fig_4_b_d_Sep2024Update.m” in folder
+		Patch Age > DD Mortality > DD Mort > Cluster Matrix Data r:m tradeoff
+Fig 5: Set mycount=2; Change gamma as needed. Run “fig2a_fig5_figS2_Sept2024Update.m” in folder
+		Patch Age > DD Reproduction > DDReproduction-with-Acritical 
+
+
+Supplementary Information
+
+Fig S1: Set mycount = 5:8 . Run “Fig_S1.m” in folder 
+		Patch Age  > DD Reproduction > DDReproduction-with-Acritical > Cluster_Matrices
+Fig S2: Change gamma as needed and run “fig2a_fig5_figS2_Sept2024Update.m” in folder
+		Patch Age > DD Reproduction > DDReproduction-with-Acritical 
+Fig S3: Run “Fig_S3.m” in folder
+		Patch Age > DD Reproduction > DDReproductionwAlphas > RichardsExtrap > Cluster Matrix Data
+Fig S4: Change gamma as needed and run “Fig2c_FigS4_Sep2024Update.m” in folder
+		Patch Age > DD Reproduction 
+Fig S5: Set i=6:6 . Run “Fig3a_FigS5_FigS6_Sept2024Updated.m” in folder
+		Patch Age > DD Offspring Survival > Cluster Matrix Data
+Fig S6: Change i as needed. Run “Fig3a_FigS5_FigS6_Sept2024Updated.m” in folder
+		Patch Age > DD Offspring Survival > Cluster Matrix Data
+Fig S7: Run “FigS7.m” in folder
+		Patch Age > DD Mortality
+Fig S8: Set mycount = 1:4 . Run “Fig4a_FigS8_Sep2024Updated.m” in folder
+		Patch Age > DD Mortality > DD Mort > Cluster Matrix Data r:m tradeoff
+Fig S9: Set i = 1:6 . Run “Fig_4c_Fig_S9_Sept2024Updated.m” in folder
+		Patch Age > DD Mortality > DD Mort w Alphas > Cluster Matrix Data r:alpha tradeoff
+
+
+
+
+Testing New Figures
+Fig 3c :  Run “DDR_Alpha_Mortality_Trade_Off_New_Code_Oct_23_2024.m” in folder
+	Patch Age > DD Reproduction
+
+
+
+SPECIFIC INSTRUCTIONS TO REPLICATE FIGURES END
+
 To run an invasion run 
 
 - For Basic Files - "InvasionSweep.m" runs a one species simulation run "Invasion.m" both of which use the reproduction/death functions.
