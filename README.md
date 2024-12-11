@@ -28,6 +28,7 @@ Main Manuscript
 Fig 1: No code.
 
 Fig 2:  
+
 	2(a): Set g =0.1 mycount=1, ai=aj=1. mycount = 1. Run “fig2a_fig5_figS2_Sept2024Update.m” in folder
 		Patch Age > DD Reproduction > DDReproduction-with-Acritical 
   
@@ -41,12 +42,14 @@ Fig 2:
 		Patch Age > DD Offspring Survival AND Reproduction 
 
 Fig 3:
+
 	3(a): Set i=5:5 . Run “Fig3a_FigS5_FigS6_Sept2024Updated.m” in folder
 		Patch Age > DD Offspring Survival > Cluster Matrix Data
   
 	3(b): Set F == 3. Run “Fig2_b_d_Fig3b_Sep2024Update.m” in folder
 		Patch Age > DD Offspring Survival AND Reproduction 
 Fig 4:
+
 	4(a): Set mycount = 1; . Run “Fig4a_FigS8_Sep2024Updated.m” in folder
 		Patch Age > DD Mortality > DD Mort > Cluster Matrix Data r:m tradeoff
   
