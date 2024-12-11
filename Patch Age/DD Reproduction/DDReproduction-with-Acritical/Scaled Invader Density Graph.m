@@ -1,7 +1,7 @@
 tic;
 
 
-for F = 5:5
+for F = 1:1
 
     if F ==1
         %________PARAMETER (a)______%

@@ -5,7 +5,7 @@ g=0.1; %Change Gamma (disturbance) here
 
 ai = 1;
 aj = 1;
-mycount = 2;
+mycount = 1;
 %%
 % -------Param 0 ----------------
 
@@ -176,7 +176,7 @@ hold on
 
 axis([mj-.15 8+.05 rj-.45 30])
 
-% plot(1.085,6,'.')
+%  plot(7.33,26.52,'.')
 % plot(1.085,5.97,'.')
 
  legend('Location','northwest','Interpreter','latex')

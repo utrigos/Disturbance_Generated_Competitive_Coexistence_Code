@@ -1,10 +1,10 @@
 tic
 
 %% Theoretical
-meshsize = 0.0005;
+meshsize = 0.001;
 
 
-for i=1:7  % Gives us different pictures from Fig S6
+for i=5:5 % Gives us different pictures from Fig S6
 
 if i==1
      g = 0; %fig S6a
@@ -89,10 +89,13 @@ if i==1
  coexmat(1,1)=1; %adding false coexistence to force black on legend
 end
 
-coex=pcolor(r,a,3*(coexmat));
+coex=pcolor(r,a,3*coexmat);
 coex.DisplayName ='Coexistence';
 hold on
+ cmap = [0 0.4470 0.7410; 0.6350 0.0780 0.1840; 0 0 0];
+ colormap(cmap)
 
+shading flat
 %% numerical
 
 if i==6
@@ -108,24 +111,25 @@ if i==6
                 InvType = 2;
 
   
-% surf(Birth2,Alpha2,MutInvMat','DisplayName','Mutual Invasion');%,'EdgeColor','[0.4940, 0.1840, 0.5560]','FaceColor', 'b','FaceAlpha',0.3)
+surf(Birth2,Alpha2,MutInvMat','DisplayName','Mutual Invasion','EdgeColor','[0.75, 0, 0.75]','FaceColor', 'b','FaceAlpha',0.3)
 
-numcoex = pcolor(Birth2,Alpha2,4*MutInvMat');
-numcoex.DisplayName='Numerical Mutual Invasion';
+% numcoex = pcolor(Birth2,Alpha2,4*MutInvMat');
+% numcoex.FaceAlpha = 0.7;
+% numcoex.DisplayName='Numerical Mutual Invasion';
 
 hold on 
 
 end
 
 
-if i<6 || i==7
-    cmap = [0 0.4470 0.7410; 0.6350 0.0780 0.1840; 0 0 0];
-elseif i==6
-    cmap = [0 0.4470 0.7410; 0.6350 0.0780 0.1840; 0 0 0; 0.3010, 0.7450, 0.9330];
-end
-colormap(cmap)
-
-shading flat
+% if i<6 || i==7
+%     cmap = [0 0.4470 0.7410; 0.6350 0.0780 0.1840; 0 0 0];
+% elseif i==6
+%     cmap = [0 0.4470 0.7410; 0.6350 0.0780 0.1840; 0 0 0; 0.3010, 0.7450, 0.9330];
+% end
+% colormap(cmap)
+% 
+% shading flat
 %%
 
 xlabel('Reproduction $r_i$','FontSize',20,'Interpreter', 'latex')
@@ -138,52 +142,10 @@ hold on
 
 
 %%
-legend('FontSize',20,'Location','best','Interpreter', 'latex')
+legend('FontSize',20,'Location','southeast','Interpreter', 'latex')
 
 hold on 
 
-% if g==.66
-%     x = [12.5,rend];
-%     y = [.2598, .2598];
-%     z= [1,1];
-%     
-%     plot3(x,y,z,'color','[0 0.4470 0.7410 0.7]','HandleVisibility','off','LineWidth',1.3);
-% elseif g==.2
-%     x = [30.656,rend];
-%     y = [.2528, .2528];
-%     z= [1,1];
-%     
-%     plot3(x,y,z,'color','[0 0.4470 0.7410 0.7]','HandleVisibility','off','LineWidth',1.3);
-% 
-% elseif g==.3
-%     x = [22,rend];
-%     y = [.2543, .2543];
-%     z= [1,1];
-%     
-%     plot3(x,y,z,'color','[0 0.4470 0.7410 0.7]','HandleVisibility','off','LineWidth',1.3);
-% 
-% elseif g==.4
-%     x = [18,rend];
-%     y = [.2558, .2558];
-%     z= [1,1];
-%     
-%     plot3(x,y,z,'color','[0 0.4470 0.7410 0.7]','HandleVisibility','off','LineWidth',1.3);
-% elseif g==.5
-%     x = [15,rend];
-%     y = [.25725, .25725];
-%     z= [1,1];
-%     
-%     plot3(x,y,z,'color','[0 0.4470 0.7410 0.7]','HandleVisibility','off','LineWidth',1.3);
-% elseif g==2.5
-%     x = [7,rend];
-%     y = [.3333, .3333];
-%     z= [1,1];
-%     
-%     plot3(x,y,z,'color','[0 0.4470 0.7410 0.7]','HandleVisibility','off','LineWidth',1.3);
-% 
-% 
-% end
-hold on 
 
 
 

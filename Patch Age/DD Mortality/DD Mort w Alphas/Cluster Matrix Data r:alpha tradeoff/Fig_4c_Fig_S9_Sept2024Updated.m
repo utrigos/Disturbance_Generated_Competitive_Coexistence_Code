@@ -1,4 +1,4 @@
-for i = 1:6
+for i = 4:4
             %___________________reading data from a CSV file________________________
             Birth1 = 2.34; %resident
             Death1 = 0.4;   %resident
@@ -70,8 +70,8 @@ elseif i==6
                 Alpha2 = readmatrix('Alpha2_Func_bj_2.34_alphaj_0.75_g_2.csv');
                 InvType = 2;
 
-                Matrix2(1,1) = 1;
-                MutInvMat(1,1) = 1;
+                Matrix2(1,1) = 1; %adding a false point to show coexistence in legend
+                MutInvMat(1,1) = 1;%adding a false coexistence point for gamma = 0 to show coexistence in legend
      %%
 end
 
