@@ -95,7 +95,7 @@ Fig S8: Set mycount = 1:4 . Run “Fig4a_FigS8_Sep2024Updated.m” in folder
 Fig S9: Set i = 1:6 . Run “Fig_4c_Fig_S9_Sept2024Updated.m” in folder
 		Patch Age > DD Mortality > DD Mort w Alphas > Cluster Matrix Data r:alpha tradeoff
 
-
+Fig S11: See Patch Age > Isolated Patch > "competitive_dynamics_isolated_patch.nb"
 
 
 Testing New Figures
